@@ -31,15 +31,13 @@ brady$date = as.Date(brady$date, format = "%m/%d/%Y")
 k_bins = c(0, 4, 5, 8, 100) 
 g_bins = c(0, 14, 93, 183, 365, 8000)
 
-# seed selected randomly and stored for replication
-set.seed(103)
 out_brady = nph(dates = brady$date, 
                 ref_date = "02-01-2005",
                 marks = brady$naff,
                 time_breaks = g_bins,
                 mark_breaks = k_bins)
 
-set.seed(103)
+
 st_brady = super_thin(K = "median_ci",
                       model = out_brady,
                       method = "superthin")
@@ -54,7 +52,7 @@ stanford$Date = as.Date(stanford$Date, format = "%m/%d/%Y")
 k_bins = c(0, 4, 5, 7, 100) 
 g_bins = c(0, 14, 93, 183, 365, 8000) 
 
-set.seed(103)
+
 out_stanford = nph(dates = stanford$Date, 
                    ref_date = "01-01-1999",
                    marks = stanford$Total.Number.of.Victims,
@@ -62,7 +60,7 @@ out_stanford = nph(dates = stanford$Date,
                    mark_breaks = k_bins)
 
 
-set.seed(103)
+
 st_stanford = super_thin(K = "median_ci",
                          model = out_stanford,
                          method = "superthin")
@@ -76,14 +74,12 @@ mj$Date = as.Date(mj$Date, format = "%m/%d/%Y")
 k_bins = c(0, 6, 10, 17, 800) 
 g_bins = c(0, 14, 93, 183, 365, 8000) 
 
-set.seed(103)
 out_mj = nph(dates = mj$Date, 
              ref_date = "01-01-1999",
              marks = mj$Affected,
              time_breaks = g_bins,
              mark_breaks = k_bins)
 
-set.seed(103)
 st_mj = super_thin(K = "median_ci",
                    model = out_mj,
                    method = "superthin")
@@ -97,14 +93,12 @@ gva$Date = as.Date(gva$Date, format = "%m/%d/%Y")
 k_bins = c(0, 4, 5, 9, 800) 
 g_bins = c(0, 14, 93, 183, 365, 8000) 
 
-set.seed(103)
 out_gva = nph(dates = gva$Date, 
               ref_date = "01-01-2013",
               marks = gva$Affected,
               time_breaks = g_bins,
               mark_breaks = k_bins)
 
-set.seed(103)
 st_gva = super_thin(K = "median_ci",
                     model = out_gva,
                     method = "superthin")
